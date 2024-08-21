@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Projects</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="keywords" content="tool">
+        <meta name="description" content="Welcome to our tool website. We offer a variety of practical tools such as unit converters, calculators, date calculators, and more to help you complete various tasks more efficiently.">
+        <meta name="author" content="JUN-YU ,HUANG">
+        <link rel="icon" type="image/x-icon" href="webfavicon.png">
+        <link rel="stylesheet" href="project_style.css" >
+        <script src="project.js" type="text/javascript"></script>
+    </head>
+    <style>
+        @media screen and (max-width:1200px){
+                    .selfie1{display:none;}
+                    .selfie2{display:block;}
+                    .selfie2_block{display:block;}
+                    .article_first_block{height:300px;}
+                    .article_second_block{height:250px;}
+                    .article_third_block{height:250px;}
+        }
+        @media screen and (max-width:800px){
+            .dropdown{display:inline-block;}
+            #dropbtn{display:block;}
+            .nav_bar_first{display:none;}
+            .nav_bar_second{display:none;}
+            .nav_bar_third{display:none;}
+            .nav_bar_4th{display:none;}
+            
+        }
+    </style>
+   
+    <body id="body">
+        <!--先做頁首-->
+        <div class="header">
+            <div class="dropdown">
+                <button type="button" onclick="dropdownfunction()" id="dropbtn">&#9776</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="project.html">Project</a>
+                    <a href="ex.html">Exercise</a>
+                </div>
+            </div>
+            <h1 class="title"><a href="index.html"><i>JUN YU</i></a></h1>
+            <!--使用nav & list 做出導覽列-->
+            <nav class="nav">
+                <ul>
+                    <li class="nav_bar_first"><a href="index.html">Home</a></li>
+                    <li class="nav_bar_second"><a href="project.html">Project</a></li>
+                    <!--<li class="nav_bar_third"><a href="">Activity Photo</a></li>-->
+                    <li class="nav_bar_4th"><a href="ex.html">Exercise</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!--頁首下方的背景圖製作-->
+        <div class="div">
+            <img class="header_background" src="photo/header_backgrund.jpg">
+            <h2>Project</h2>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JUN-YU</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="refresh" content="">
+        <meta name="title" content="JUN YU">
+        <meta name="description" content="">
+        <meta name="keywords" content="Jun Yu">
+        <meta name="author" content="Yun yu">
+        <link rel="icon" type="image/x-icon" href="webfavicon.png">
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js"></script>
+    </head>
+    <style>
+        @media screen and (max-width:1200px){
+                    .selfie1{display:none;}
+                    .selfie2{display:block;}
+                    .selfie2_block{display:block;}
+                    .article_first_block{height:300px;}
+                    .article_second_block{height:250px;}
+                    .article_third_block{height:250px;}
+        }
+        @media screen and (max-width:800px){
+            .dropdown{display:inline-block;}
+            #dropbtn{display:block;}
+            .nav_bar_first{display:none;}
+            .nav_bar_second{display:none;}
+            .nav_bar_third{display:none;}
+            .nav_bar_4th{display:none;}
+            
+        }
+    </style>
+    <body>
+        <!--先做頁首-->
+        <div class="header">
+            <div class="dropdown">
+                <button type="button" onclick="dropdownfunction()" id="dropbtn">&#9776</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="project.html">Project</a>
+                    <a href="ex.html">Exercise</a>
+                </div>
+            </div>
+            <h1 class="title"><a href="index.html"><i>JUN YU</i></a></h1>
+            <!--使用nav & list 做出導覽列-->
+            <nav class="nav">
+                <ul>
+                    <li class="nav_bar_first"><a href="index.html">Home</a></li>
+                    <li class="nav_bar_second"><a href="project.html">Project</a></li>
+                    <!--<li class="nav_bar_third"><a href="">Activity Photo</a></li>-->
+                    <li class="nav_bar_4th"><a href="ex.html">Exercise</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--頁首下方的背景圖製作-->
+        <div class="div">
+            <img class="header_background" src="photo/header_backgrund.jpg">
+        </div>
+        <!--article區塊-->
+        <div class="main_article">
+            <div class="article_first_block">
+                <h1 class="name">JUN-YU ,HUANG (黃駿宇)</h1>
+                <img class="selfie1" src="photo/selfie.jpg" title="JUN-YU">
+            </div>
+            <!--隔出第二區塊做學歷-->
+            <div class="article_second_block">
+                <h1 class="education_label">Education</h1>
+                <!--使用list列出學歷-->
+                <ul class="education_ul">
+                    <li class="education_li">B.S at Department of Applied Mathematics ,National Taitung University ,Taitung ,Taiwan (2020.9-2024.6)</li>
+                    <li class="education_li">At Kaohsiung Municipal Lujhu Senior High School ,Koahsiung ,Taiwan (2017.9-2020.6)</li>
+                </ul>
+            </div>
+            <!--第三區塊()-->
+            <div class="article_third_block">
+                <h1 class="position_label">Position</h1>
+                <!--使用list列出職位-->
+                <ul class="position_ul">
+                    <li class="position_li">Class President at Department of Applied Mathematics ,National Taitung University(2020.9-2020.1)</li>
+                    <li class="position_li">The captain of volleyball team at Department of Applied Mathematics ,National Taitung University(2022-2023)</li>
+                </ul>
+            </div>
+            <div class="article_4th_block">
+                <h1 class="contact_information_label">Contact information</h1>
+                <!--使用list列出聯絡方式-->
+                <ul class="contact_information_ul">
+                    <li class="contact_information_li">E-mail <b>:</b> 10904105@gm.nttu.edu.tw</li>
+                    <li class="contact_information_li">FB<b>:</b> 黃駿宇</li>
+                </ul>
+            </div>
+        </div>
+        <div class="selfie2_block">
+            <img class="selfie2" src="photo/selfie.jpg" title="JUN-YU">
+        </div>
+        <!--做頁尾-->
+        <div>
+            <footer class="footer">	Copyright &copy; 2024 JUN-YU ,HUANG.All rights reserved.</footer>
+        </div>
+    </body>
+</html>

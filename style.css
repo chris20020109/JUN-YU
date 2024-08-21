@@ -1,0 +1,56 @@
+/*全標籤的設定*/
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;scrollbar-width:thin;}
+ul{list-style-type:none;}
+a {text-decoration:none;color:white}
+
+
+/*導覽列*/
+.header{padding:7px;align-items:baseline;position:fixed;width:100%;z-index:999;}
+.dropdown{display:none;position:relative;}
+#dropbtn {color:white;font-size:24px;background-color: transparent;border-style:none;margin-right:10px;margin-left:10px;display:none;}
+#dropbtn:hover{color:rgb(26, 130, 172);cursor:pointer}
+.dropdown-content {display: none; position: absolute; background-color: #f1f1f1; min-width: 160px; z-index: 1;}
+.dropdown-content a {color: black; padding: 12px 16px; text-decoration: none; display: block;border-bottom:1px solid black;}
+.show {display: block;}
+.title{font-family:cursive;color:white;font-size:28px;display:inline}
+.nav{right:0;position:absolute;top:10px;}
+.nav_bar_first{display:inline;margin-right:10px;font-size:24px;;border-left:3px white solid;padding-left:10px;}
+.nav_bar_second{display:inline;margin-right:10px;font-size:24px;;border-left:3px white solid;padding-left:10px;}
+.nav_bar_third{display:none;margin-right:10px;font-size:24px;;border-left:3px white solid;padding-left:10px;}
+.nav_bar_4th{display:inline;margin-right:10px;font-size:24px;;border-left:3px white solid;padding-left:10px;}
+.header_background{width:100%;height:250px;z-index:-1;}
+.div{width:100%;height:250px;}
+
+/*主要文章*/
+.main_article
+/*第一區塊*/
+.article_first_block{position:relative;height:150px;}
+.name{display:inline;position:absolute;top:70px;left:70px;font-size:26px;color:rgb(4, 136, 177);font-weight:lighter;}
+.selfie1{width:300px;height:auto;position:absolute;right:50px;top:50px;display: block;}
+
+/*第二區塊(學歷)*/
+.article_second_block{position: relative;height:150px}
+.education_label{position:absolute;left:70px;font-size:26px;color:rgb(4, 136, 177);font-weight:lighter;}
+.education_ul{position:absolute;left:90px;top:50px;list-style-type: square;}
+.education_li{padding-bottom:20px;}
+
+/*第三區塊(職位)*/
+.article_third_block{position:relative;height:150px;}
+.position_label{position:absolute;left:70px;font-size:26px;color:rgb(4, 136, 177);font-weight:lighter;}
+.position_ul{position:absolute;left:90px;top:50px;list-style-type: square;}
+.position_li{padding-bottom:20px}
+ 
+/*第四區塊(聯絡資料)*/
+.article_4th_block{position:relative;height:150px;}
+.contact_information_label{position:absolute;left:70px;font-size:26px;color:rgb(4, 136, 177);font-weight:lighter;}
+.contact_information_ul{position:absolute;left:90px;top:50px;list-style-type: square;}
+.contact_information_li{padding-bottom:20px}
+
+/*裝置螢幕小於1200px的照片位置*/
+.selfie2_block{height:400px;position:relative;display:none;}
+.selfie2{width:300px;height:auto;position:absolute;right:50px;top:50px;display:none;}
+
+/*頁尾*/
+.footer{width:100%;height:30px;background-color: aliceblue;padding-left:10%;}
+
+#alert{width:30px;height:auto;border:3px solid black;border-radius:0.5; }

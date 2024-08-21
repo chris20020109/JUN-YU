@@ -1,0 +1,64 @@
+/*全標籤的設定*/
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;scrollbar-width:thin;}
+ul{list-style-type:none;}
+a {text-decoration:none;color:white}
+fieldset{border:3px solid black;line-height:30px;}
+legend{font-size:24px;}
+
+
+/*導覽列*/
+.header{background-color:none;padding:7px;align-items:baseline;position:fixed;width:100%;z-index:999;}
+.dropdown{display:none;position:relative;}
+#dropbtn {color:white;font-size:24px;background-color: transparent;border-style:none;margin-right:10px;margin-left:10px;display:none;}
+#dropbtn:hover{color:rgb(26, 130, 172);cursor:pointer}
+.dropdown-content {display: none; position: absolute; background-color: #f1f1f1; min-width: 160px; z-index: 1;}
+.dropdown-content a {color: black; padding: 12px 16px; text-decoration: none; display: block;border-bottom:1px solid black;}
+.show {display: block;}
+.title{font-family:cursive;color:white;font-size:28px;display:inline;}
+.nav{right:0;position:absolute;top:10px;}
+.nav_bar_first{display:inline;margin-right:10px;font-size:24px;;border-left:3px white solid;padding-left:10px;}
+.nav_bar_second{display:inline;margin-right:10px;font-size:24px;;border-left:3px white solid;padding-left:10px;}
+.nav_bar_third{display:none;margin-right:10px;font-size:24px;;border-left:3px white solid;padding-left:10px;}
+.nav_bar_4th{display:inline;margin-right:10px;font-size:24px;;border-left:3px white solid;padding-left:10px;}
+.header_background{width:100%;height:250px;z-index:-1;}
+.div{width:100%;height:250px;position: relative;}
+h2{position:absolute;top:50%;left:50%;font-size:56px;color:white;text-align: center;transform: translate(-50%, -50%);}
+
+/*左側連結*/
+.leftnav_a{border-style:none;background-color:rgb(243, 241, 241);font-size:18px;}
+.leftnav_a:hover{color:brown;cursor: pointer;}
+.left_nav_div{background-color:rgb(243,241,241);width:15%;height:100%;margin-left:1%;margin-top:20px;border:1px solid black;float:left;}
+.left_ul{line-height:30px;list-style-type:disc;margin-left:10%;}
+.nav_h{margin-left:6px;}
+
+
+
+/*bmi區塊*/
+.bmi_block{width:70%;height:auto;text-align:center;margin-left:20%;margin-top:20px;}
+#bmi_block{display:none;}
+#BMI{margin:2px 0 2px 0;}
+
+
+/*1A2B*/
+#ABgame_block{width:70%;height:auto;text-align:center;margin-left:20%;margin-top:20px;display:none;}
+#ABgame_rule{background-color: rgb(230, 241, 67);margin-left:10px;border-radius:0.5em;padding:5px;}
+#ABgame_rule:hover{cursor: pointer;}
+
+
+/*偵測按鍵數值*/
+#keycode_test_block{display:none;margin-top:20px;text-align:center;width:70%;height:auto;margin-left:20%;}
+.fieldset{padding:10px;}
+
+/*2D圖物件移動*/
+#object_move_block{width:70%;height:auto;margin-left:20%;text-align:center;margin-top:20px;display:none;position:relative
+}
+#object_move_fieldset{width:100%;}
+.map_pic{width:80%;height:auto;}
+.person_pic{width:30px;height:auto;position:absolute;left:50px;top:20px;}
+
+/*2D圖物件移動第二版*/
+#object_move_block2{width:70%;height:auto;margin-left:20%;text-align:center;margin-top:20px;display:none;position:relative
+}
+#object_move_fieldset2{width:100%;}
+.map_pic2{width:80%;height:auto;}
+.person_pic2{width:30px;height:auto;position:absolute;left:50px;top:20px;}

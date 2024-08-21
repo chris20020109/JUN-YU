@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="refresh" content="">
+        <meta name="title" content="JUN YU">
+        <meta name="description" content="">
+        <meta name="keywords" content="Jun Yu">
+        <meta name="author" content="Yun yu">
+        <link rel="icon" type="image/x-icon" href="webfavicon.png">
+        <link rel="stylesheet" href="exercise.css">
+        <script src="exercise.js"></script>
+    </head>
+    <style>
+        @media screen and (max-width:1200px){
+            .selfie1{display:none;}
+            .selfie2{display:block;}
+            .selfie2_block{display:block;}
+            .article_first_block{height:300px;}
+            .article_second_block{height:250px;}
+            .article_third_block{height:250px;}
+            .left_nav_div{width:90%;height:220px;float:none;margin-left:5%}
+            .bmi_block{width:90%;margin-left:5%}
+            #ABgame_block{width:90%;margin-left:5%}
+            #keycode_test_block{width:90%;margin-left:5%}
+            #object_move_block{width:90%;margin-left:5%}
+            #object_move_block2{width:90%;margin-left:5%}
+        }
+        @media screen and (max-width:800px){
+            .dropdown{display:inline-block;}
+            #dropbtn{display:block;}
+            .nav_bar_first{display:none;}
+            .nav_bar_second{display:none;}
+            .nav_bar_third{display:none;}
+            .nav_bar_4th{display:none;}
+            
+        }
+    </style>
+    <body>
+        <!--先做頁首-->
+        <div class="header">
+            <div class="dropdown">
+                <button type="button" onclick="dropdownfunction()" id="dropbtn">&#9776</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="project.html">Project</a>
+                    <a href="ex.html">Exercise</a>
+                </div>
+            </div>
+            <h1 class="title"><a href="index.html"><i>JUN YU</i></a></h1>
+            <!--使用nav & list 做出導覽列-->
+            <nav class="nav">
+                <ul>
+                    <li class="nav_bar_first"><a href="index.html">Home</a></li>
+                    <li class="nav_bar_second"><a href="project.html">Project</a></li>
+                    <!--<li class="nav_bar_third"><a href="">Activity Photo</a></li>-->
+                    <li class="nav_bar_4th"><a href="ex.html">Exercise</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--頁首下方的背景圖製作-->
+        <div class="div">
+            <img class="header_background" src="photo/header_backgrund.jpg">
+            <h2>Exercise</h2>
+        </div>
+        <!--左側目錄-->
+        <div class="left_nav_div">
+            <nav>
+                <h1 class="nav_h">目錄</h1>
+                <ul class="left_ul">
+                    <li><button type="button" onclick="leftnavck('bmi_block')" class="leftnav_a">BMI計算機</button></li>
+                    <li><button type="button" onclick="leftnavck('ABgame_block')" class="leftnav_a">1A2B猜數字遊戲</button></li>
+                    <li><button type="button" onclick="leftnavck('keycode_test_block')" class="leftnav_a">偵測按鍵數值</button></li>
+                    <li><button type="button" onclick="leftnavck('object_move_block')" class="leftnav_a">2D圖物件移動</button></li>
+                    <li><button type="button" onclick="leftnavck('object_move_block2')" class="leftnav_a">2D圖物件移動第二版</button></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!--BMI計算機-->
+        <div class="bmi_block" id="bmi_block">
+            <fieldset >
+                <legend>BMI計算機</legend>
+                <form>
+                    <p>請輸入體重(公斤):<input type="text" id="weight" placeholder="例如:90"></p>
+                    <p>請輸入身高(公尺):<input type="text" id="height" placeholder="例如:1.88"></p>
+                    <p id="BMI">=</p>
+                    <button type="button" onclick="cal()">計算</button>
+                </form>
+            </fieldset>
+        </div>
+        <!--猜數字遊戲-->
+        <div id="ABgame_block">
+            <fieldset>
+                <legend>1A2B猜數字遊戲</legend>
+                <form>
+                    <p>遊玩請先按下開始鍵<span id="ABgame_rule">規則</span></p>
+                    <p>請輸入四個數字:<input type="text" id="guess_num"></p>
+                    <button type="button" onclick="ABgame_run()">開始</button>
+                    <button type="button" onclick="confirm()">確認</button>
+                    <p id="answer1"></p>
+                </form>
+            </fieldset>
+        </div>
+
+        <!--偵測按鍵數值-->
+        <div id="keycode_test_block">
+            <fieldset class="fieldset">
+                <legend>偵測按鍵數值</legend>
+                <form>
+                    Press any key: <input type="text" id="key">
+                    <p id="keyvalue">value</p>
+                </form>
+            </fieldset>
+        </div>
+        <!--2D圖物件移動-->
+        <div id="object_move_block">
+            <fieldset id="object_move_fieldset">
+                <legend>2D圖物件移動</legend>
+                <img src="photo/map.png" class="map_pic">
+                <p><button type="button" id="omb">出發</button></p>
+                <img src="photo/person.png" class="person_pic">      <!--發現有很多問題,例如:function觸發會疊加以及有卡頓感-->
+            </fieldset>
+        </div>
+        <!--2D圖物件移動第二版-->
+        <div id="object_move_block2">
+            <fieldset id="object_move_fieldset2">
+                <legend>2D圖物件移動第二版</legend>
+                <img src="photo/map.png" class="map_pic2">
+                <p><button type="button" id="omb2">出發</button></p>
+                <img src="photo/person.png" class="person_pic2">
+                <P>按esc可以停止</P>
+            </fieldset>
+        </div>
+    </body>
+</html>
