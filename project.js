@@ -1,3 +1,7 @@
+//onload 回到最上方
+window.onload = function(){
+    window.scrollTo({top:0,behavior:"smooth"})
+}
 //body下滑導覽列背景顏色出現
 document.addEventListener("DOMContentLoaded",function(){
     window.addEventListener('scroll', function() {
