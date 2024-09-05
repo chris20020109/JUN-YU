@@ -8,7 +8,10 @@
         <meta name="description" content="Welcome to our tool website. We offer a variety of practical tools such as unit converters, calculators, date calculators, and more to help you complete various tasks more efficiently.">
         <meta name="author" content="JUN-YU ,HUANG">
         <link rel="icon" type="image/x-icon" href="webfavicon.png">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="project_style.css" >
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
         <script src="project.js" type="text/javascript"></script>
     </head>
     <style>
@@ -38,7 +41,7 @@
                 <button type="button" onclick="dropdownfunction()" id="dropbtn">&#9776</button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="project.html">Project</a>
-                    <a href="ex.html">Exercise</a>
+                    <a href="">Exercise</a>
                 </div>
             </div>
             <h1 class="title"><a href="index.html"><i>JUN YU</i></a></h1>
@@ -48,15 +51,85 @@
                     <li class="nav_bar_first"><a href="index.html">Home</a></li>
                     <li class="nav_bar_second"><a href="project.html">Project</a></li>
                     <!--<li class="nav_bar_third"><a href="">Activity Photo</a></li>-->
-                    <li class="nav_bar_4th"><a href="ex.html">Exercise</a></li>
+                    <li class="nav_bar_4th"><a href="">Exercise</a></li>
                 </ul>
             </nav>
         </div>
 
         <!--頁首下方的背景圖製作-->
         <div class="div">
-            <img class="header_background" src="https://chris20020109.github.io/JUN-YU/header_backgrund.jpg">
+            <img class="header_background" src="photo/header_backgrund.jpg">
             <h2>Project</h2>
         </div>
+
+
+
+
+        <div class="container">
+            <h1>最佳化計算工具</h1>
+            <label for="avaLengths">可用尺寸(m), 用逗號分隔(放五個):6.4,4.5,4.7,5.6,6</label>
+            <input type="text" id="avaLengths" placeholder="例如:6.4,4.5,4.7,5.6,6">
+    
+            <label for="cutLength">所需切割長度 (m):0.843</label>
+            <input type="text" id="cutLength" placeholder="例如:0.843">
+            
+            <label for="cutquantity">所需切割數量(支):20</label>
+            <input type="text" id="cutquantity" placeholder="例如:20">
+    
+            <button onclick="calculate()">計算最佳方案</button>
+    
+            <div class="results" id="results"></div>
+        </div>
+        <div>
+            <footer class="footer">	Copyright &copy; 2024 JUN-YU ,HUANG.All rights reserved.</footer>
+        </div>
     </body>
+    <script>
+        function calculate(){
+            //get input
+            const avaLengthsarray = document.getElementById("avaLengths").value.split(',').map(Number);
+            const cutLength = parseFloat(document.getElementById("cutLength").value);
+            const cutquantity = parseInt(document.getElementById("cutquantity").value);
+            //set var
+            let c = avaLengthsarray;
+            let maxrange =  cutLength*(cutquantity+1);
+            let minrange = cutLength*cutquantity;
+            const results = [];
+            let times = 20;     //一個尺寸最多就20個
+            for (let x1=0;x1<=times;x1++){
+                for(let x2=0;x2<=times;x2++){
+                    for(let x3=0;x3<=times;x3++){
+                        for(let x4=0;x4<=times;x4++){
+                            for(let x5=0;x5<=times;x5++){
+                                let totalLength = c[0] * x1 + c[1] * x2 + c[2] * x3 + c[3] * x4 + c[4] * x5;
+                                if (totalLength <= maxrange && totalLength >= minrange){
+                                    let wasteLength = c[0] * x1 + c[1] * x2 + c[2] * x3 + c[3] * x4 + c[4] * x5 - minrange;
+                                    results.push({
+                                        results:`${c[0]}m : <strong>${x1}個</strong> , ${c[1]}m : <strong>${x2}個</strong>, ${c[2]}m : <strong>${x3}個</strong>, ${c[3]}m : <strong>${x4}個</strong>, ${c[4]}m : <strong>${x5}個</strong>`,
+                                        waste:`${wasteLength}`
+                                    })
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            let bestanswer = results[0]; //預設results 第一個為最佳方案
+            for (let result of results){
+                if(result.waste < bestanswer.waste){
+                    bestanswer = result;
+                }
+            }
+            
+            let output = `<p>所有方案:</P>`;
+            results.forEach(result => {
+                output += `<p>${result.results}---> 剩餘 ${result.waste} m</p><br>`;
+            });
+
+            output +=`<p style="border:3px solid yellow;border-radius:4px"><span>最佳方案 :</span> ${bestanswer.results}---> 剩餘最少為 ${bestanswer.waste} m</p>`;
+
+            document.getElementById('results').innerHTML = output;
+
+        }
+    </script>
 </html>
