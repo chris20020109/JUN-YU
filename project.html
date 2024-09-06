@@ -104,7 +104,7 @@
                             for(let x5=0;x5<=times;x5++){
                                 let totalLength = c[0] * x1 + c[1] * x2 + c[2] * x3 + c[3] * x4 + c[4] * x5;
                                 if (totalLength <= maxrange && totalLength >= minrange){
-                                    let wasteLength = c[0] * x1 + c[1] * x2 + c[2] * x3 + c[3] * x4 + c[4] * x5 - minrange;
+                                    let wasteLength = Math.round((c[0] * x1 + c[1] * x2 + c[2] * x3 + c[3] * x4 + c[4] * x5 - minrange)*1000)/1000;
                                     results.push({
                                         results:`${c[0]}m : <strong>${x1}個</strong> , ${c[1]}m : <strong>${x2}個</strong>, ${c[2]}m : <strong>${x3}個</strong>, ${c[3]}m : <strong>${x4}個</strong>, ${c[4]}m : <strong>${x5}個</strong>`,
                                         waste:`${wasteLength}`
