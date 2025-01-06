@@ -31,3 +31,18 @@ setInterval(function(){
     let time = new Date();
     document.querySelector("footer").innerHTML = 'Copyright &copy; 2024 JUN-YU ,HUANG.All rights reserved. '+time;
 },1000);
+
+$(document).ready(function(){
+    $(".title a").mouseenter(function(){
+        $(this).css("font-size","30px")
+    })
+    $(".title a").mouseleave(function(){
+        $(this).css("font-size","28px")
+    })
+    $(".nav a ").mouseenter(function(){
+        $(this).css("color","rgb(26, 130, 172)")
+    })
+    $(".nav a").mouseleave(function(){
+        $(this).css("color","white")
+    })
+})
